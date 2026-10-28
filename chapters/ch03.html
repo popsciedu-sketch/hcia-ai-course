@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-MO">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>第三章 · 影像影音</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body data-page="ch03">
+<div class="overlay"></div>
+<div class="topbar">
+  <button class="menu-btn" data-menu type="button">☰ 目錄</button>
+  <strong>AI 超神應用術 · 互動教學</strong>
+</div>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark">AI</div>
+    <div>
+      <h1>AI 超神應用術</h1>
+      <p>鄧君如／文淵閣 · 消化教學</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>學習進度</span><span data-progress-text>0%</span></div>
+    <div class="progress-bar"><span data-progress-fill></span></div>
+  </div>
+  <nav class="nav">
+<div class="nav-section">導覽</div>
+<a href="../index.html" data-page="index">總覽</a>
+<a href="preface.html" data-page="preface">導讀・學習地圖</a>
+<a href="ch01.html" data-page="ch01">第一章・精準掌握 Gemini</a>
+<a href="ch02.html" data-page="ch02">第二章・Google 生態系</a>
+<a href="ch03.html" data-page="ch03">第三章・影像與影音創作</a>
+<a href="ch04.html" data-page="ch04">第四章・Canvas／Gem／研究</a>
+<a href="ch05.html" data-page="ch05">第五章・NotebookLM</a>
+<a href="epilogue.html" data-page="epilogue">結語・行動端與總複習</a>
+<div class="nav-section">實體課配套</div>
+<a href="../practice/index.html" data-page="practice">HCIA-AI 實驗複習</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="container">
+
+<nav class="breadcrumb"><a href="../index.html">總覽</a> / 第三章</nav>
+<header class="page-head">
+  <div class="eyebrow">Part 03–05 · 影像與影音</div>
+  <h2>Nano Banana、Veo、Flow：從靜態到動態的敘事</h2>
+  <p>書中以影像生成／編輯與 Veo、Flow 影音工作流示範創意應用。課堂重點：<strong>提示具體化、風格一致、版權與肖像邊界、輸出用途標註</strong>。</p>
+</header>
+
+<section class="card">
+  <h3>創作管線（消化圖）</h3>
+  <img src="../assets/svg/media-pipeline.svg" alt="影音管線" style="width:100%;max-width:600px"/>
+  <ol class="steps">
+    <li><strong>定義用途</strong>：貼文頭圖、教學示意、短影片腳本——用途決定長寬比與風格。</li>
+    <li><strong>寫視覺提示</strong>：主體、環境、光線、鏡頭、風格、負向約束（不要文字亂碼等）。</li>
+    <li><strong>靜態定稿</strong>：先鎖定角色／色票，再進動效，減少「每幀換一張臉」。</li>
+    <li><strong>影音（Veo／Flow）</strong>：分鏡 → 生成 → 剪輯節奏；旁白與字幕分開控管。</li>
+    <li><strong>發布前</strong>：標註 AI 協助、檢查商標／名人肖像、學校是否允許公開貼。</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h3>提示詞對照（示意，非書中原文）</h3>
+  <pre class="code">弱：一張好看的圖
+強：16:9 科普封面，澳門街頭夜景淺景深，主體為手持平板的學生剪影，
+    霓虹青紫光，扁平插畫風，留左上角負空間放標題，不要浮水印文字。</pre>
+  <div class="callout warn"><p>生成內容可能撞似現有角色或品牌；商用前需另行確認授權。課堂練習標明「僅教學用途」。</p></div>
+</section>
+
+
+<section class="quiz" data-quiz="c3q1" data-answer="B" data-ok="對——用途與一致性優先。" data-bad="見創作管線。">
+  <h3>隨堂測驗 · C3Q1</h3>
+  <p>影音創作時，較穩妥的順序是？</p>
+  <label><input type="radio" name="c3q1" value="A"/> <strong>A.</strong> 先大量生成影片再決定主題</label><label><input type="radio" name="c3q1" value="B"/> <strong>B.</strong> 先定用途與靜態風格，再進入分鏡與動效</label><label><input type="radio" name="c3q1" value="C"/> <strong>C.</strong> 完全不寫提示只按隨機</label><label><input type="radio" name="c3q1" value="D"/> <strong>D.</strong> 把未授權名人臉當作預設主角</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c3q2" data-answer="B" data-ok="正確。" data-bad="提示詞對照。">
+  <h3>隨堂測驗 · C3Q2</h3>
+  <p>為什麼要在提示裡寫負向約束？</p>
+  <label><input type="radio" name="c3q2" value="A"/> <strong>A.</strong> 讓模型更耗電才顯得專業</label><label><input type="radio" name="c3q2" value="B"/> <strong>B.</strong> 減少常見瑕疵（如亂碼文字、多餘肢体）</label><label><input type="radio" name="c3q2" value="C"/> <strong>C.</strong> 可自動取得商業授權</label><label><input type="radio" name="c3q2" value="D"/> <strong>D.</strong> 能關閉所有安全過濾</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c3q3" data-answer="B" data-ok="對。" data-bad="發布前檢查。">
+  <h3>隨堂測驗 · C3Q3</h3>
+  <p>公開發布 AI 影像／影片時，建議？</p>
+  <label><input type="radio" name="c3q3" value="A"/> <strong>A.</strong> 從不說明來源</label><label><input type="radio" name="c3q3" value="B"/> <strong>B.</strong> 依場合標註 AI 協助並檢查肖像／商標風險</label><label><input type="radio" name="c3q3" value="C"/> <strong>C.</strong> 只用最低解析度就一定合法</label><label><input type="radio" name="c3q3" value="D"/> <strong>D.</strong> 把別人的作品翻拍再生成就沒問題</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<div class="pager">
+  <a class="btn secondary" href="ch02.html">← 生態系</a>
+  <a class="btn" href="ch04.html">下一章：Canvas／Gem →</a>
+</div>
+
+<div class="footer-note">本站為消化 GOTOP《AI 超神應用術》（鄧君如總監製／文淵閣工作室）後的自寫教學，非原文轉載。Gemini、NotebookLM、Veo、Google 等為各權利人商標。實體課實驗請在課堂環境執行；本站不自動跑代碼。</div>
+</div>
+</main>
+</div>
+<script src="../js/app.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

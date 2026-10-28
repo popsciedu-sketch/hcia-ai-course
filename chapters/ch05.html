@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-MO">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>第五章 · NotebookLM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body data-page="ch05">
+<div class="overlay"></div>
+<div class="topbar">
+  <button class="menu-btn" data-menu type="button">☰ 目錄</button>
+  <strong>AI 超神應用術 · 互動教學</strong>
+</div>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark">AI</div>
+    <div>
+      <h1>AI 超神應用術</h1>
+      <p>鄧君如／文淵閣 · 消化教學</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>學習進度</span><span data-progress-text>0%</span></div>
+    <div class="progress-bar"><span data-progress-fill></span></div>
+  </div>
+  <nav class="nav">
+<div class="nav-section">導覽</div>
+<a href="../index.html" data-page="index">總覽</a>
+<a href="preface.html" data-page="preface">導讀・學習地圖</a>
+<a href="ch01.html" data-page="ch01">第一章・精準掌握 Gemini</a>
+<a href="ch02.html" data-page="ch02">第二章・Google 生態系</a>
+<a href="ch03.html" data-page="ch03">第三章・影像與影音創作</a>
+<a href="ch04.html" data-page="ch04">第四章・Canvas／Gem／研究</a>
+<a href="ch05.html" data-page="ch05">第五章・NotebookLM</a>
+<a href="epilogue.html" data-page="epilogue">結語・行動端與總複習</a>
+<div class="nav-section">實體課配套</div>
+<a href="../practice/index.html" data-page="practice">HCIA-AI 實驗複習</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="container">
+
+<nav class="breadcrumb"><a href="../index.html">總覽</a> / 第五章</nav>
+<header class="page-head">
+  <div class="eyebrow">Part 07–08 · NotebookLM</div>
+  <h2>來源導向的第二大腦：問答、音訊概覽、簡報</h2>
+  <p>NotebookLM 的核心差異：先<strong>放入你提供的來源</strong>，再對話、做導覽與產出。適合教材包、會議資料、專題文獻——與「開放網聊」的 Gemini 互補。</p>
+</header>
+
+<section class="card">
+  <h3>工作流對照</h3>
+  <img src="../assets/svg/notebooklm-flow.svg" alt="NotebookLM 流程" style="width:100%;max-width:560px"/>
+  <div class="grid-2" style="margin-top:1rem">
+    <div class="mini-card"><strong>適合</strong><p>指定 PDF／筆記範圍內問答、產生學習導覽、音訊複習、簡報骨架。</p></div>
+    <div class="mini-card"><strong>注意</strong><p>來源品質決定上限；未放入的內容不該被當成「筆記本已證明」。</p></div>
+  </div>
+</section>
+
+<section class="card">
+  <h3>實體課建議練習</h3>
+  <ol class="steps">
+    <li>新建筆記本，上傳 2–3 份<strong>已授權</strong>課堂 PDF 或自寫 Markdown。</li>
+    <li>先問「用條列總結各來源立場差異」，檢查是否出現來源外事實。</li>
+    <li>產生學習導覽／常見問答，學員兩兩互問「哪一句找不到出處」。</li>
+    <li>嘗試音訊概覽或簡報大綱，再人工改成可上台版本。</li>
+  </ol>
+  <div class="callout warn"><p>著作權：不要把整本未授權商業書掃進去當公開分享筆記本。本課程消化站亦僅提供教學摘要。</p></div>
+</section>
+
+
+<section class="quiz" data-quiz="c5q1" data-answer="B" data-ok="正確。" data-bad="章節開頭。">
+  <h3>隨堂測驗 · C5Q1</h3>
+  <p>NotebookLM 相對一般聊天 AI 的關鍵差異是？</p>
+  <label><input type="radio" name="c5q1" value="A"/> <strong>A.</strong> 完全不能讀 PDF</label><label><input type="radio" name="c5q1" value="B"/> <strong>B.</strong> 強調基於你放入的來源再生成</label><label><input type="radio" name="c5q1" value="C"/> <strong>C.</strong> 只能產生程式不能寫字</label><label><input type="radio" name="c5q1" value="D"/> <strong>D.</strong> 必須離線單機</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c5q2" data-answer="B" data-ok="對。" data-bad="注意來源品質。">
+  <h3>隨堂測驗 · C5Q2</h3>
+  <p>發現回答似乎超出已上傳來源時，應？</p>
+  <label><input type="radio" name="c5q2" value="A"/> <strong>A.</strong> 直接當論文引用</label><label><input type="radio" name="c5q2" value="B"/> <strong>B.</strong> 回到來源核對，並收緊提問範圍</label><label><input type="radio" name="c5q2" value="C"/> <strong>C.</strong> 再上傳無關圖片湊數</label><label><input type="radio" name="c5q2" value="D"/> <strong>D.</strong> 關閉引用功能就好</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c5q3" data-answer="B" data-ok="正確。" data-bad="著作權提示。">
+  <h3>隨堂測驗 · C5Q3</h3>
+  <p>課堂上使用 NotebookLM 的合規做法是？</p>
+  <label><input type="radio" name="c5q3" value="A"/> <strong>A.</strong> 上傳未授權完整商業書並公開連結</label><label><input type="radio" name="c5q3" value="B"/> <strong>B.</strong> 使用已授權或自製教材來源</label><label><input type="radio" name="c5q3" value="C"/> <strong>C.</strong> 要求同學提供家長身分證掃描</label><label><input type="radio" name="c5q3" value="D"/> <strong>D.</strong> 把答案鑰永久公開在網誌</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<div class="pager">
+  <a class="btn secondary" href="ch04.html">← Canvas／Gem</a>
+  <a class="btn" href="epilogue.html">結語 →</a>
+</div>
+
+<div class="footer-note">本站為消化 GOTOP《AI 超神應用術》（鄧君如總監製／文淵閣工作室）後的自寫教學，非原文轉載。Gemini、NotebookLM、Veo、Google 等為各權利人商標。實體課實驗請在課堂環境執行；本站不自動跑代碼。</div>
+</div>
+</main>
+</div>
+<script src="../js/app.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

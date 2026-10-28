@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-MO">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>第四章 · Canvas／Gem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body data-page="ch04">
+<div class="overlay"></div>
+<div class="topbar">
+  <button class="menu-btn" data-menu type="button">☰ 目錄</button>
+  <strong>AI 超神應用術 · 互動教學</strong>
+</div>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark">AI</div>
+    <div>
+      <h1>AI 超神應用術</h1>
+      <p>鄧君如／文淵閣 · 消化教學</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>學習進度</span><span data-progress-text>0%</span></div>
+    <div class="progress-bar"><span data-progress-fill></span></div>
+  </div>
+  <nav class="nav">
+<div class="nav-section">導覽</div>
+<a href="../index.html" data-page="index">總覽</a>
+<a href="preface.html" data-page="preface">導讀・學習地圖</a>
+<a href="ch01.html" data-page="ch01">第一章・精準掌握 Gemini</a>
+<a href="ch02.html" data-page="ch02">第二章・Google 生態系</a>
+<a href="ch03.html" data-page="ch03">第三章・影像與影音創作</a>
+<a href="ch04.html" data-page="ch04">第四章・Canvas／Gem／研究</a>
+<a href="ch05.html" data-page="ch05">第五章・NotebookLM</a>
+<a href="epilogue.html" data-page="epilogue">結語・行動端與總複習</a>
+<div class="nav-section">實體課配套</div>
+<a href="../practice/index.html" data-page="practice">HCIA-AI 實驗複習</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="container">
+
+<nav class="breadcrumb"><a href="../index.html">總覽</a> / 第四章</nav>
+<header class="page-head">
+  <div class="eyebrow">Part 06 · Canvas／Gem／深度應用</div>
+  <h2>客製助理與畫布式工作流</h2>
+  <p>當重複任務變多，就把「角色＋規則＋輸出格式」固化成 Gem（或同等自訂助理），並用 Canvas／畫布類介面迭代長文與結構化產出。</p>
+</header>
+
+<section class="card">
+  <h3>何時該做自訂助理？</h3>
+  <ul class="clean">
+    <li>每週重複：週報、教案暖身、錯題講解口吻固定。</li>
+    <li>需要嚴格格式：JSON、表格欄位、評分規準。</li>
+    <li>要限制行為：不准編造數據、必須提問澄清、只能用繁中。</li>
+  </ul>
+  <img src="../assets/svg/gem-canvas.svg" alt="Gem 與 Canvas" style="width:100%;max-width:520px;margin:1rem 0"/>
+</section>
+
+<section class="card">
+  <h3>設計一張「助理規格卡」</h3>
+  <ol class="steps">
+    <li><strong>名稱與情境</strong>：例「科普短課暖身助理」。</li>
+    <li><strong>允許／禁止</strong>：允許改寫學員草稿；禁止捏造實驗數據。</li>
+    <li><strong>輸入</strong>：學員程度、時長、主題關鍵詞。</li>
+    <li><strong>輸出</strong>：3 題勾題＋1 個示範比喻＋風險提醒。</li>
+    <li><strong>驗收</strong>：老師抽一題人工改到可上台。</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h3>Deep Research／長任務小技巧</h3>
+  <div class="callout tip">
+    <p>把大題拆成：問題定義 → 資料來源清單 → 對照表 → 結論與不確定性。每一段都要求「我還缺什麼資訊」以避免一次幻覺到底。</p>
+  </div>
+</section>
+
+
+<section class="quiz" data-quiz="c4q1" data-answer="B" data-ok="正確。" data-bad="見本章開頭。">
+  <h3>隨堂測驗 · C4Q1</h3>
+  <p>建立 Gem／自訂助理最主要的價值是？</p>
+  <label><input type="radio" name="c4q1" value="A"/> <strong>A.</strong> 讓模型可以違法存取任意內網</label><label><input type="radio" name="c4q1" value="B"/> <strong>B.</strong> 把重複的角色與格式規則固化，提升穩定度</label><label><input type="radio" name="c4q1" value="C"/> <strong>C.</strong> 保證永遠零幻覺</label><label><input type="radio" name="c4q1" value="D"/> <strong>D.</strong> 取代所有真人老師</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c4q2" data-answer="B" data-ok="對。" data-bad="規格卡步驟。">
+  <h3>隨堂測驗 · C4Q2</h3>
+  <p>助理規格卡裡「禁止事項」的作用？</p>
+  <label><input type="radio" name="c4q2" value="A"/> <strong>A.</strong> 裝飾用</label><label><input type="radio" name="c4q2" value="B"/> <strong>B.</strong> 降低越權與編造風險</label><label><input type="radio" name="c4q2" value="C"/> <strong>C.</strong> 讓回答愈長愈好</label><label><input type="radio" name="c4q2" value="D"/> <strong>D.</strong> 自動通過認證考</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c4q3" data-answer="B" data-ok="正確。" data-bad="Deep Research 小技巧。">
+  <h3>隨堂測驗 · C4Q3</h3>
+  <p>長研究任務較佳策略是？</p>
+  <label><input type="radio" name="c4q3" value="A"/> <strong>A.</strong> 一則提示要求寫完碩論</label><label><input type="radio" name="c4q3" value="B"/> <strong>B.</strong> 分段並暴露不確定性與資料缺口</label><label><input type="radio" name="c4q3" value="C"/> <strong>C.</strong> 禁止任何引用</label><label><input type="radio" name="c4q3" value="D"/> <strong>D.</strong> 只問是非題</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<div class="pager">
+  <a class="btn secondary" href="ch03.html">← 影像影音</a>
+  <a class="btn" href="ch05.html">下一章：NotebookLM →</a>
+</div>
+
+<div class="footer-note">本站為消化 GOTOP《AI 超神應用術》（鄧君如總監製／文淵閣工作室）後的自寫教學，非原文轉載。Gemini、NotebookLM、Veo、Google 等為各權利人商標。實體課實驗請在課堂環境執行；本站不自動跑代碼。</div>
+</div>
+</main>
+</div>
+<script src="../js/app.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

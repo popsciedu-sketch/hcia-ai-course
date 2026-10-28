@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-MO">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HCIA-AI 實驗複習 · AI 超神應用術</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body data-page="practice">
+<div class="overlay"></div>
+<div class="topbar">
+  <button class="menu-btn" data-menu type="button">☰ 目錄</button>
+  <strong>AI 超神應用術 · 互動教學</strong>
+</div>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark">AI</div>
+    <div>
+      <h1>AI 超神應用術</h1>
+      <p>鄧君如／文淵閣 · 消化教學</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>學習進度</span><span data-progress-text>0%</span></div>
+    <div class="progress-bar"><span data-progress-fill></span></div>
+  </div>
+  <nav class="nav">
+<div class="nav-section">導覽</div>
+<a href="../index.html" data-page="index">總覽</a>
+<a href="../chapters/preface.html" data-page="preface">導讀・學習地圖</a>
+<a href="../chapters/ch01.html" data-page="ch01">第一章・精準掌握 Gemini</a>
+<a href="../chapters/ch02.html" data-page="ch02">第二章・Google 生態系</a>
+<a href="../chapters/ch03.html" data-page="ch03">第三章・影像與影音創作</a>
+<a href="../chapters/ch04.html" data-page="ch04">第四章・Canvas／Gem／研究</a>
+<a href="../chapters/ch05.html" data-page="ch05">第五章・NotebookLM</a>
+<a href="../chapters/epilogue.html" data-page="epilogue">結語・行動端與總複習</a>
+<div class="nav-section">實體課配套</div>
+<a href="index.html" data-page="practice">HCIA-AI 實驗複習</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="container">
+
+<nav class="breadcrumb"><a href="../index.html">總覽</a> / HCIA-AI 實驗複習</nav>
+<header class="page-head">
+  <div class="eyebrow">實體課配套 · 引導式複習（非實時執行）</div>
+  <h2>HCIA-AI 實驗複習：步驟圖解 × 對照重點 × 檢查清單</h2>
+  <p>對照澳門定製內訓大綱與 HCIA-AI V4.0 實驗指導（機器學習／深度學習與開發框架／模型部署與應用），以及 Atlas／昇騰開發環境概念。本頁像第二大腦站的 Logseq 實作頁一樣，是<strong>走讀與勾選</strong>——請回課堂或授權環境再動手，本站不連叢集、不自動跑 notebook。</p>
+</header>
+
+<section class="card">
+  <h3>實驗地圖</h3>
+  <img src="../assets/svg/hcia-lab-map.svg" alt="HCIA 實驗地圖" style="width:100%;max-width:640px"/>
+  <div class="chip-row">
+    <span class="chip">機器學習實驗</span>
+    <span class="chip">深度學習／MindSpore</span>
+    <span class="chip">模型部署</span>
+    <span class="chip">昇騰／Atlas 概念</span>
+    <span class="chip">大模型與提示</span>
+  </div>
+</section>
+
+<section class="card">
+  <h3>使用方式（對齊課堂）</h3>
+  <ol class="steps">
+    <li>先通讀本頁「階段 0–4」與檢查清單，用筆或下方勾選標出不懂處。</li>
+    <li>帶著清單打開課堂發的實驗手冊／ipynb（官方環境）。</li>
+    <li>每完成一小節，回來勾選；卡關只記「現象＋錯誤訊息關鍵字」，問助教。</li>
+    <li>勿把帳號金鑰、內網位址、學員個資貼到公開 AI 對話。</li>
+  </ol>
+  <div class="callout warn"><p>華為實驗手冊受版權與保密條款保護。本頁僅提供<strong>自寫教學摘要與複習結構</strong>，不轉載手冊正文、不提供破解或未授權鏡像。</p></div>
+</section>
+
+<section class="card">
+  <h3>階段 0 · 環境與心智模型</h3>
+  <div class="lab-step">
+    <h4>0-1 你在哪裡跑？</h4>
+    <div class="meta">對照：課程準備環境／ModelArts 或本地 + 昇騰開發套件概念</div>
+    <p>分清三層：<strong>寫代碼的地方</strong>（Notebook／IDE）、<strong>算力在哪</strong>（CPU／GPU／NPU）、<strong>模型產物去哪</strong>（checkpoint、OM／部署服務）。</p>
+    <div class="mock-ui">
+      <div class="bar">mock · lab console</div>
+      <div>① 登入課堂平台 → ② 開指定 notebook → ③ 確認 kernel／框架版本 → ④ 跑 <code>import</code> 煙測</div>
+    </div>
+  </div>
+  <div class="lab-step">
+    <h4>0-2 Atlas／CANN 概念卡（開發板路線）</h4>
+    <div class="meta">對照：Atlas 200I DK A2 環境搭建導讀</div>
+    <ul class="clean">
+      <li><strong>CANN</strong>：面向 AI 的異構計算架構；推理常需 ATC 轉模型 + AscendCL 開發應用。</li>
+      <li><strong>配件檢查</strong>：開發套件、電源、足夠容量 Micro SD、讀卡器、可 SSH 的 PC。</li>
+      <li><strong>課堂原則</strong>：配線與燒錄依現場助教指引；本站不提供映像檔。</li>
+    </ul>
+  </div>
+  <div class="checklist">
+    <label><input type="checkbox"/> 能說出本次實驗用的框架名稱與版本口令</label>
+    <label><input type="checkbox"/> 知道產出物（模型檔／日誌）預設存放位置</label>
+    <label><input type="checkbox"/> 已確認不會把密碼寫進要繳交的 notebook</label>
+  </div>
+</section>
+
+<section class="card">
+  <h3>階段 1 · 機器學習實驗複習</h3>
+  <div class="lab-step">
+    <h4>1-1 經典流程四拍</h4>
+    <div class="meta">對照：HCIA-AI《機器學習實驗指導手冊》複習結構</div>
+    <ol class="steps">
+      <li>問題定義：分類／回歸／聚類？評估指標是什麼？</li>
+      <li>數據：讀取 → 缺值／類別編碼 → 訓練驗證分割（避免洩漏）。</li>
+      <li>模型：從線性／樹模型等課程指定算法起步，先跑通再談調參。</li>
+      <li>診斷：看誤差來源是偏差還是方差；只改一個變量做對照。</li>
+    </ol>
+  </div>
+  <div class="lab-step">
+    <h4>1-2 數學口令（夠用即可）</h4>
+    <ul class="clean">
+      <li>線性代數：張量形狀要對得上（batch × 特徵）。</li>
+      <li>微積分直覺：梯度下降＝沿著損失下降方向更新參數。</li>
+      <li>機率：Softmax + 交叉熵常見於多分類。</li>
+    </ul>
+  </div>
+  <div class="checklist">
+    <label><input type="checkbox"/> 能畫出「資料→特徵→模型→指標」流程</label>
+    <label><input type="checkbox"/> 分割資料時沒有把測試集資訊用於訓練</label>
+    <label><input type="checkbox"/> 至少記錄一組基線指標數字</label>
+  </div>
+</section>
+
+<section class="card">
+  <h3>階段 2 · 深度學習與開發框架</h3>
+  <div class="lab-step">
+    <h4>2-1 網絡最小零件</h4>
+    <div class="meta">對照：深度學習與人工智能開發框架實驗</div>
+    <ul class="clean">
+      <li>線性層堆疊不夠：用<strong>激活函數</strong>引入非線性。</li>
+      <li>前向：算預測；反向：依損失更新權重。</li>
+      <li>CNN 直覺：區域感受野，適合影像；注意輸入通道與影像尺寸。</li>
+    </ul>
+    <div class="mock-ui">
+      <div class="bar">mock · training loop</div>
+      <div>for epoch → forward → loss → backward → optimizer.step → log metrics</div>
+    </div>
+  </div>
+  <div class="lab-step">
+    <h4>2-2 課堂常見坑</h4>
+    <ul class="clean">
+      <li>形狀不符：打印 <code>tensor.shape</code> 再查手冊範例。</li>
+      <li>忘記切 eval／train 模式（Dropout／BN 行為不同）。</li>
+      <li>學習率過大導致 loss 爆炸；過小則「看起來沒學」。</li>
+      <li>把測試集當調參集反覆榨乾 → 報喜不報實。</li>
+    </ul>
+  </div>
+  <div class="checklist">
+    <label><input type="checkbox"/> 跑通一個最小訓練迴圈並看到 loss 曲線或日誌</label>
+    <label><input type="checkbox"/> 能解釋為何需要激活函數</label>
+    <label><input type="checkbox"/> 保存／載入權重各成功一次（依課堂 API）</label>
+  </div>
+</section>
+
+<section class="card">
+  <h3>階段 3 · 模型部署與應用</h3>
+  <div class="lab-step">
+    <h4>3-1 從「訓得動」到「呼叫得到」</h4>
+    <div class="meta">對照：HCIA-AI《模型部署與應用》實驗指導</div>
+    <ol class="steps">
+      <li>導出／轉換：依平台要求的格式（課堂指定步驟為準）。</li>
+      <li>推理服務：輸入預處理必須與訓練時一致（縮放、均值、詞表）。</li>
+      <li>驗收：用固定樣例比對輸出；記錄延遲與失敗案例。</li>
+      <li>回滾：保留上一版產物，避免只留「壞掉的最新版」。</li>
+    </ol>
+  </div>
+  <div class="checklist">
+    <label><input type="checkbox"/> 能說出訓練預處理與推理預處理是否一致</label>
+    <label><input type="checkbox"/> 有一組「金樣例」輸入輸出可回歸測試</label>
+    <label><input type="checkbox"/> 知道失敗時看哪裡的日誌</label>
+  </div>
+</section>
+
+<section class="card">
+  <h3>階段 4 · 大模型／提示／Agent（大綱對照）</h3>
+  <div class="lab-step">
+    <h4>4-1 與《AI 超神應用術》的銜接</h4>
+    <p>內訓大綱含大模型基礎、昇騰方案、提示工程、Agent 介紹。主教材站教你<strong>怎麼用生成式工具辦公與創作</strong>；HCIA 實驗教你<strong>模型與框架如何被訓練／部署</strong>。兩者互補：一邊是應用層工作流，一邊是工程層原理。</p>
+    <ul class="clean">
+      <li>提示工程：約束、格式、少樣本範例——與本站 ch01／ch04 同一肌肉。</li>
+      <li>安全治理：幻覺、資料外洩、越權——兩條線都要考。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <h3>總檢查清單（課末自評）</h3>
+  <div class="checklist">
+    <label><input type="checkbox"/> 機器學習：獨立重跑一條基線實驗</label>
+    <label><input type="checkbox"/> 深度學習：解釋前向／反向與一個實際坑</label>
+    <label><input type="checkbox"/> 部署：完成一次可呼叫的推理驗收</label>
+    <label><input type="checkbox"/> 昇騰／Atlas：能用自己的話說明 CANN／轉模型在鏈路中的位置</label>
+    <label><input type="checkbox"/> 應用課：用 Gemini／NotebookLM 完成一條不外洩資料的辦公任務</label>
+  </div>
+</section>
+
+
+<section class="quiz" data-quiz="labq1" data-answer="B" data-ok="正確——對齊第二大腦站的 walkthrough 定位。" data-bad="重讀頁首說明。">
+  <h3>複習測驗 · LABQ1</h3>
+  <p>本練習頁的正確用途是？</p>
+  <label><input type="radio" name="labq1" value="A"/> <strong>A.</strong> 在瀏覽器直接連昇騰叢集自動交作業</label><label><input type="radio" name="labq1" value="B"/> <strong>B.</strong> 引導複習步驟與檢查清單，回授權課堂環境實作</label><label><input type="radio" name="labq1" value="C"/> <strong>C.</strong> 公開貼出華為手冊全文</label><label><input type="radio" name="labq1" value="D"/> <strong>D.</strong> 取代 HCIA 認證考試監考</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="labq2" data-answer="B" data-ok="對。" data-bad="見階段 3。">
+  <h3>複習測驗 · LABQ2</h3>
+  <p>訓練與推理預處理不一致時，最常見後果是？</p>
+  <label><input type="radio" name="labq2" value="A"/> <strong>A.</strong> 準確率魔術上升且無需查核</label><label><input type="radio" name="labq2" value="B"/> <strong>B.</strong> 線上效果異常或全面失效</label><label><input type="radio" name="labq2" value="C"/> <strong>C.</strong> 自動取得商業授權</label><label><input type="radio" name="labq2" value="D"/> <strong>D.</strong> CANN 會自己改標籤</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="labq3" data-answer="B" data-ok="正確。" data-bad="階段 2。">
+  <h3>複習測驗 · LABQ3</h3>
+  <p>激活函數在深度網絡中的主要作用？</p>
+  <label><input type="radio" name="labq3" value="A"/> <strong>A.</strong> 只為了讓代碼變長</label><label><input type="radio" name="labq3" value="B"/> <strong>B.</strong> 引入非線性，提升模型表示能力</label><label><input type="radio" name="labq3" value="C"/> <strong>C.</strong> 取代所有損失函數</label><label><input type="radio" name="labq3" value="D"/> <strong>D.</strong> 保證不會過擬合</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="labq4" data-answer="A" data-ok="對——評估會過度樂觀。" data-bad="階段 1–2 診斷。">
+  <h3>複習測驗 · LABQ4</h3>
+  <p>把測試集反覆用於調參的風險是？</p>
+  <label><input type="radio" name="labq4" value="A"/> <strong>A.</strong> 報告數字好看但不泛化</label><label><input type="radio" name="labq4" value="B"/> <strong>B.</strong> 一定通過認證</label><label><input type="radio" name="labq4" value="C"/> <strong>C.</strong> 會自動刪除過擬合</label><label><input type="radio" name="labq4" value="D"/> <strong>D.</strong> 沒有任何影響</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<div class="pager">
+  <a class="btn secondary" href="../chapters/epilogue.html">← 結語</a>
+  <a class="btn" href="../index.html">回總覽</a>
+</div>
+
+<div class="footer-note">本站為消化 GOTOP《AI 超神應用術》（鄧君如總監製／文淵閣工作室）後的自寫教學，非原文轉載。Gemini、NotebookLM、Veo、Google 等為各權利人商標。實體課實驗請在課堂環境執行；本站不自動跑代碼。</div>
+</div>
+</main>
+</div>
+<script src="../js/app.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

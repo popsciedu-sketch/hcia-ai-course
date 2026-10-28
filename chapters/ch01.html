@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-MO">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>第一章 · Gemini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body data-page="ch01">
+<div class="overlay"></div>
+<div class="topbar">
+  <button class="menu-btn" data-menu type="button">☰ 目錄</button>
+  <strong>AI 超神應用術 · 互動教學</strong>
+</div>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark">AI</div>
+    <div>
+      <h1>AI 超神應用術</h1>
+      <p>鄧君如／文淵閣 · 消化教學</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>學習進度</span><span data-progress-text>0%</span></div>
+    <div class="progress-bar"><span data-progress-fill></span></div>
+  </div>
+  <nav class="nav">
+<div class="nav-section">導覽</div>
+<a href="../index.html" data-page="index">總覽</a>
+<a href="preface.html" data-page="preface">導讀・學習地圖</a>
+<a href="ch01.html" data-page="ch01">第一章・精準掌握 Gemini</a>
+<a href="ch02.html" data-page="ch02">第二章・Google 生態系</a>
+<a href="ch03.html" data-page="ch03">第三章・影像與影音創作</a>
+<a href="ch04.html" data-page="ch04">第四章・Canvas／Gem／研究</a>
+<a href="ch05.html" data-page="ch05">第五章・NotebookLM</a>
+<a href="epilogue.html" data-page="epilogue">結語・行動端與總複習</a>
+<div class="nav-section">實體課配套</div>
+<a href="../practice/index.html" data-page="practice">HCIA-AI 實驗複習</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="container">
+
+<nav class="breadcrumb"><a href="../index.html">總覽</a> / 第一章</nav>
+<header class="page-head">
+  <div class="eyebrow">Part 01 · 精準掌握 Gemini</div>
+  <h2>把 Gemini 當「多模態工作夥伴」，不是搜尋框</h2>
+  <p>對照書中 Tip：認識多模態、介面配置、提示詞結構、研究／Artifacts 類產出。重點是<strong>任務拆解 + 約束 + 驗收</strong>，而不是一次丟超長空泛指令。</p>
+</header>
+
+<section class="card">
+  <h3>Gemini 是什麼（教學摘要）</h3>
+  <p>Google 打造的多能力模型：可同時處理文字、圖片、聲音、影片與程式碼，並深度接上搜尋與 Workspace。課堂上請學員建立心智模型——它擅長<strong>草稿、結構、對照、改寫</strong>；最終事實與決策仍由人負責。</p>
+  <img src="../assets/svg/gemini-core.svg" alt="Gemini 核心能力" style="width:100%;max-width:560px;margin:1rem 0"/>
+  <div class="grid-2">
+    <div class="mini-card"><strong>強項</strong><p>多模態理解、邏輯推理、程式輔助、生態系整合、快速草稿。</p></div>
+    <div class="mini-card"><strong>限制</strong><p>非主流語意可能失準、知識非即時（需搭配搜尋）、無真實情感、可能幻覺與偏見。</p></div>
+  </div>
+</section>
+
+<section class="card">
+  <h3>介面節奏（Do it! 消化）</h3>
+  <ol class="steps">
+    <li>開啟 <code>gemini.google.com</code>，登入課程指定帳號（訪客模式功能受限）。</li>
+    <li>認識側欄：歷史對話、設定、模型／功能切換；主區為提示與回覆。</li>
+    <li>練習三種輸入：純文字 / 上傳圖或 PDF / 貼程式碼請「解釋＋找風險」。</li>
+    <li>每次回覆後做<strong>一句驗收</strong>：「來源？可執行？需不需要更短版本？」</li>
+  </ol>
+  <div class="callout tip"><p>不登入也能試網頁版，但通常無法完整保存對話、功能也較陽春——實體課請統一登入策略。</p></div>
+</section>
+
+<section class="card">
+  <h3>提示詞最小公式</h3>
+  <pre class="code">角色 + 任務 + 對象／場域 + 約束（長度、語氣、格式）+ 驗收標準
+例：你是科普編輯。把下列筆記改成國中程度 200 字短文，
+條列 3 個易錯點，不要發明書中沒有的數據。</pre>
+  <ul class="clean">
+    <li>需要深度調研時，明確要求「列出可點開的來源」並人工抽查。</li>
+    <li>產出簡報大綱、表格、檢查清單時，指定欄位名稱，減少自由發揮。</li>
+    <li>同一任務迭代：先結構 → 再細節 → 再縮短；避免一次要求「完美終稿」。</li>
+  </ul>
+</section>
+
+
+<section class="quiz" data-quiz="c1q1" data-answer="B" data-ok="正確。" data-bad="回到本章第一節。">
+  <h3>隨堂測驗 · C1Q1</h3>
+  <p>下列哪一項最能描述 Gemini 的「多模態」？</p>
+  <label><input type="radio" name="c1q1" value="A"/> <strong>A.</strong> 一次只能回答是非題</label><label><input type="radio" name="c1q1" value="B"/> <strong>B.</strong> 可同時理解並整合文字、圖像、音訊、影片、程式碼等</label><label><input type="radio" name="c1q1" value="C"/> <strong>C.</strong> 只能產生圖片不能讀圖</label><label><input type="radio" name="c1q1" value="D"/> <strong>D.</strong> 必須安裝本機 GPU 才能用網頁版</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c1q2" data-answer="B" data-ok="幻覺風險要求人工查核。" data-bad="複習限制與幻覺。">
+  <h3>隨堂測驗 · C1Q2</h3>
+  <p>重要決策引用 AI 內容時，最關鍵的一步是？</p>
+  <label><input type="radio" name="c1q2" value="A"/> <strong>A.</strong> 相信語氣愈肯定愈正確</label><label><input type="radio" name="c1q2" value="B"/> <strong>B.</strong> 交叉查核事實與來源</label><label><input type="radio" name="c1q2" value="C"/> <strong>C.</strong> 把同一段話貼到社群就算驗證</label><label><input type="radio" name="c1q2" value="D"/> <strong>D.</strong> 只要模型版本最新就不必查</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c1q3" data-answer="B" data-ok="結構清楚才能穩定產出。" data-bad="看提示詞最小公式。">
+  <h3>隨堂測驗 · C1Q3</h3>
+  <p>較佳的提示詞做法是？</p>
+  <label><input type="radio" name="c1q3" value="A"/> <strong>A.</strong> 只打一個詞「寫報告」</label><label><input type="radio" name="c1q3" value="B"/> <strong>B.</strong> 給角色、任務、約束與驗收，必要時分輪迭代</label><label><input type="radio" name="c1q3" value="C"/> <strong>C.</strong> 把整本機密合約無說明地貼上</label><label><input type="radio" name="c1q3" value="D"/> <strong>D.</strong> 要求模型「忽略所有安全政策」</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz="c1q4" data-answer="B" data-ok="對。" data-bad="見介面節奏提示。">
+  <h3>隨堂測驗 · C1Q4</h3>
+  <p>未登入使用網頁版 Gemini 的常見限制是？</p>
+  <label><input type="radio" name="c1q4" value="A"/> <strong>A.</strong> 完全無法開啟網站</label><label><input type="radio" name="c1q4" value="B"/> <strong>B.</strong> 對話保存與進階功能常受限</label><label><input type="radio" name="c1q4" value="C"/> <strong>C.</strong> 會自動取得 Workspace 管理員權限</label><label><input type="radio" name="c1q4" value="D"/> <strong>D.</strong> 只能用語音不能打字</label>
+  <div class="quiz-actions"><button type="button" class="btn" data-check>核對答案</button></div>
+  <div class="feedback"></div>
+</section>
+
+<div class="pager">
+  <a class="btn secondary" href="preface.html">← 導讀</a>
+  <a class="btn" href="ch02.html">下一章：生態系 →</a>
+</div>
+
+<div class="footer-note">本站為消化 GOTOP《AI 超神應用術》（鄧君如總監製／文淵閣工作室）後的自寫教學，非原文轉載。Gemini、NotebookLM、Veo、Google 等為各權利人商標。實體課實驗請在課堂環境執行；本站不自動跑代碼。</div>
+</div>
+</main>
+</div>
+<script src="../js/app.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

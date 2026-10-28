@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-label="Gem 與 Canvas">
+<rect width="640" height="240" rx="16" fill="#faf8f5"/>
+<rect x="40" y="40" width="250" height="160" rx="14" fill="#ede4f5" stroke="#5b2d8e" stroke-width="2"/>
+<rect x="350" y="40" width="250" height="160" rx="14" fill="#d9f5f1" stroke="#0d9488" stroke-width="2"/>
+<text x="165" y="78" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="16" font-weight="700" fill="#5b2d8e">Gem／自訂助理</text>
+<text x="165" y="110" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="12" fill="#4a4a5a">角色 · 禁止事項</text>
+<text x="165" y="132" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="12" fill="#4a4a5a">固定輸出格式</text>
+<text x="165" y="154" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="12" fill="#4a4a5a">重複任務穩定化</text>
+<text x="475" y="78" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="16" font-weight="700" fill="#0d9488">Canvas／畫布</text>
+<text x="475" y="110" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="12" fill="#4a4a5a">長文迭代</text>
+<text x="475" y="132" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="12" fill="#4a4a5a">結構可視化</text>
+<text x="475" y="154" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="12" fill="#4a4a5a">邊寫邊調</text>
+</svg>

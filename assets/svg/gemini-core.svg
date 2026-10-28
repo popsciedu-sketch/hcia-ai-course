@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="Gemini 核心">
+<rect width="640" height="300" rx="16" fill="#faf8f5"/>
+<circle cx="320" cy="150" r="58" fill="#5b2d8e"/>
+<text x="320" y="155" text-anchor="middle" fill="#fff" font-family="Noto Sans TC,sans-serif" font-size="16" font-weight="700">Gemini</text>
+<g font-family="Noto Sans TC,sans-serif" font-size="13">
+<rect x="40" y="40" width="130" height="44" rx="10" fill="#ede4f5"/><text x="105" y="67" text-anchor="middle" fill="#5b2d8e">多模態</text>
+<rect x="470" y="40" width="130" height="44" rx="10" fill="#d9f5f1"/><text x="535" y="67" text-anchor="middle" fill="#0d9488">推理</text>
+<rect x="40" y="216" width="130" height="44" rx="10" fill="#d9f5f1"/><text x="105" y="243" text-anchor="middle" fill="#0d9488">程式輔助</text>
+<rect x="470" y="216" width="130" height="44" rx="10" fill="#ede4f5"/><text x="535" y="243" text-anchor="middle" fill="#5b2d8e">生態系</text>
+</g>
+<path d="M170 62 H260" stroke="#5b2d8e" stroke-width="2"/>
+<path d="M470 62 H380" stroke="#0d9488" stroke-width="2"/>
+<path d="M170 238 H260" stroke="#0d9488" stroke-width="2"/>
+<path d="M470 238 H380" stroke="#5b2d8e" stroke-width="2"/>
+</svg>
