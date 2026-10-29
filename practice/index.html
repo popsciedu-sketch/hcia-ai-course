@@ -94,10 +94,24 @@
       <li><strong>課堂原則</strong>：配線與燒錄依現場助教指引；本站不提供映像檔。</li>
     </ul>
   </div>
+  <div class="lab-step" id="typec-ics">
+    <h4>0-3 Type-C／ICS：經 PC 共享連外網（Windows）</h4>
+    <div class="meta">對照：Atlas 200I DK A2「通過 PC 共享網絡聯網」；僅適用 <span class="mono">192.168.137.x</span></div>
+    <p>Type-C 預設遠端位址常是 <span class="mono">root@192.168.0.2</span>（usb0）。Windows「Internet 連線共享（ICS）」會把 PC 端強制改成 <span class="mono">192.168.137.1</span>，因此板上 usb0 要改成 <strong><span class="mono">192.168.137.2/24</span></strong>、閘道 <span class="mono">192.168.137.1</span>；完成後改用 <span class="mono">ssh root@192.168.137.2</span>。</p>
+    <ol class="steps">
+      <li>用<strong>可傳資料</strong>的 Type-C 線連板與 PC；裝置管理員應見到 USB RNDIS／「本地連線 x」。</li>
+      <li>在開發板改網路（仍可用舊 SSH <span class="mono">192.168.0.2</span>）：usb0＝<span class="mono">192.168.137.2/24</span>＋預設路由經 <span class="mono">192.168.137.1</span>；eth0／eth1<strong>不要</strong>再佔 <span class="mono">137</span> 段（例：eth1 改 <span class="mono">192.168.0.100/24</span> 並拿掉經 137.1 的預設路由）。三張網卡的第三段網段不可相同；usb0 不可設成 <span class="mono">.1</span>。</li>
+      <li>Ubuntu：編輯 <span class="mono">/etc/netplan/*-netcfg.yaml</span> 後 <span class="mono">sudo netplan apply</span>。openEuler：改 <span class="mono">ifcfg-usb0</span> 後 <span class="mono">nmcli con reload</span> 再 <span class="mono">nmcli con up usb0</span>。</li>
+      <li>PC：設定 → 網路和 Internet → 變更適配器選項 → 右鍵「有外網」的連線 → 內容 → <strong>共用</strong> → 勾選允許其他使用者透過此電腦的 Internet 連線 → 家庭網路連線選 RNDIS／連板那條 → 確定；提示改成 <span class="mono">192.168.137.1</span> 時選「是」。</li>
+      <li>驗收：<span class="mono">ssh root@192.168.137.2</span> 後執行 <span class="mono">curl www.baidu.com</span>，有回應即共享成功。</li>
+    </ol>
+    <div class="callout"><p>逐步截圖與排錯以官方為準：<a href="https://www.hiascend.com/document/detail/zh/Atlas200IDKA2DeveloperKit/23.0.RC2/Hardware%20Interfaces/hiug/hiug_0010.html" target="_blank" rel="noopener">PC 共享網絡（Windows）</a>、<a href="https://www.hiascend.com/document/detail/zh/Atlas200IDKA2DeveloperKit/23.0.RC2/Appendices/faq/faq_0048.html" target="_blank" rel="noopener">一根 Type-C 連網 FAQ</a>、<a href="https://www.hiascend.com/document/detail/zh/Atlas200IDKA2DeveloperKit/23.0.RC2/Hardware%20Interfaces/hiug/hiug_0005.html" target="_blank" rel="noopener">Type-C 遠程登錄／RNDIS</a>。本節為課堂自寫摘要，不取代華為手冊。</p></div>
+  </div>
   <div class="checklist">
     <label><input type="checkbox"/> 能說出本次實驗用的框架名稱與版本口令</label>
     <label><input type="checkbox"/> 知道產出物（模型檔／日誌）預設存放位置</label>
     <label><input type="checkbox"/> 已確認不會把密碼寫進要繳交的 notebook</label>
+    <label><input type="checkbox"/> （開發板路線）Type-C／ICS：能用 192.168.137.2 SSH 並 curl 外網</label>
   </div>
 </section>
 
